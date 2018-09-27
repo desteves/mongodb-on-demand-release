@@ -1,6 +1,6 @@
 ---
 blobstore:
-  provider: s3
+  provider: gcs
   options:
-    bucket_name: mongodb-on-demand-release
-final_name: mongodb
+    bucket_name: mongodb-odb-release
+final_name: mongodb-odb
