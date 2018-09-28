@@ -1,0 +1,80 @@
+name: mongodb-odb
+version: "5"
+commit_hash: b222ef2
+uncommitted_changes: true
+jobs:
+- name: cleanup_service
+  version: e1713f891ffd6a2c4f049baa071de53da4769a0f
+  fingerprint: e1713f891ffd6a2c4f049baa071de53da4769a0f
+  sha1: a9c958211dd80d45f414c006dddaa5b2bd80006f
+- name: configure_backups
+  version: 2c53ed97a483205f7f1b6f7c6d7de1397a700d4c
+  fingerprint: 2c53ed97a483205f7f1b6f7c6d7de1397a700d4c
+  sha1: 6ae2f04bb9f5b004d1f9d3f762ab27a2a2a6571b
+- name: mongod_node
+  version: 0860edf4eaf355dea5615a7847fafa549ae4dc38
+  fingerprint: 0860edf4eaf355dea5615a7847fafa549ae4dc38
+  sha1: a634f4881a4925f81bdffe6db18a0f3b4c37d236
+- name: mongodb-dns-aliases
+  version: 02a12deefcb4c05226a8cb881000abea312684e9
+  fingerprint: 02a12deefcb4c05226a8cb881000abea312684e9
+  sha1: b775f3ad11a0444220b0b4a6a838d90c9cc0792f
+- name: mongodb_config_agent
+  version: 674c56875d821a7bf88878f33f2b66624ac04416
+  fingerprint: 674c56875d821a7bf88878f33f2b66624ac04416
+  sha1: 04b57fbc86354533d935d1e63ae4e2df9394573e
+- name: mongodb_service_adapter
+  version: d3f51247bf719724a1a27ea4efb187401a042e3f
+  fingerprint: d3f51247bf719724a1a27ea4efb187401a042e3f
+  sha1: b25e7446d62e58226e941fb8b881ce395149adbc
+- name: smoke-tests
+  version: f2f98258f4554527d3d40bc7180f6624a18b0133
+  fingerprint: f2f98258f4554527d3d40bc7180f6624a18b0133
+  sha1: 3deebed38fbced7c7abd09f8866cf977b0c43234
+packages:
+- name: cf-cli-6-linux
+  version: c36374dcf00fc171491b41c63b914518c97cae43
+  fingerprint: c36374dcf00fc171491b41c63b914518c97cae43
+  sha1: 6b65f8b762fce6ddee4b56ebfcb86b269ab5df2c
+  dependencies: []
+- name: golang-1.11-linux
+  version: bb9ab510b4b82a163137540402017207b9fc7e06
+  fingerprint: bb9ab510b4b82a163137540402017207b9fc7e06
+  sha1: f76df378af8cfd97e8fd60cdbc5b00ee952d5caf
+  dependencies: []
+- name: jq
+  version: f502bfc65e67f129d21866f86e68f8458bd0ae28
+  fingerprint: f502bfc65e67f129d21866f86e68f8458bd0ae28
+  sha1: e8df050e22ac7c355249adf89eb51b74903b340d
+  dependencies: []
+- name: mongod-node
+  version: 7b98fe2d5a85cdadbf9ca61047b742438eda36de
+  fingerprint: 7b98fe2d5a85cdadbf9ca61047b742438eda36de
+  sha1: 94c3caec7e99f9271ec803b28e0a52731e6be812
+  dependencies: []
+- name: mongodb
+  version: f6b2619235804f4689f806252074b004b6a84235
+  fingerprint: f6b2619235804f4689f806252074b004b6a84235
+  sha1: 2409dc4fc72af71aab6ad7fe15c7532c8496b459
+  dependencies: []
+- name: mongodb-config-agent
+  version: 7040b7b1aeb6c82c5c9460f76186ec1550f45309
+  fingerprint: 7040b7b1aeb6c82c5c9460f76186ec1550f45309
+  sha1: c3e295a4a2e6ebd387369fa7cd58a30b0c9ba780
+  dependencies:
+  - golang-1.11-linux
+- name: mongodb-service-adapter
+  version: 814fd30524da3112681375daac6a26a696dcd49c
+  fingerprint: 814fd30524da3112681375daac6a26a696dcd49c
+  sha1: 7e497e7ebdcd2957537961684fb30a3f70e03a11
+  dependencies:
+  - golang-1.11-linux
+- name: mongodb-smoke-tests
+  version: 7370dbb8c826a3bc40bfe2aee65d4c6e1634cfdb
+  fingerprint: 7370dbb8c826a3bc40bfe2aee65d4c6e1634cfdb
+  sha1: 800a5e7a946ebb3da6e27672f75447e1f47ef1b4
+  dependencies: []
+license:
+  version: 4cfe8f5bcd3f84d460244c11667f61bb222d35aa
+  fingerprint: 4cfe8f5bcd3f84d460244c11667f61bb222d35aa
+  sha1: a22ff76121b8efeb84fded9622d3797767d389c9
