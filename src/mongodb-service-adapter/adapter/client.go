@@ -15,6 +15,10 @@ import (
 	"github.com/tidwall/gjson"
 )
 
+const (
+	ERROR_CODE_MULTIPLE_GROUPS = "MULTIPLE_GROUPS"
+)
+
 type OMClient struct {
 	Url      string
 	Username string
@@ -27,6 +31,21 @@ type Automation struct {
 
 type MongoDbVersionsType struct {
 	Name string
+}
+
+//GroupByName
+type GroupByName struct {
+	ID          string         `json:"id"`
+	Name        string         `json:"name"`
+	AgentAPIKey string         `json:"agentApiKey"`
+	HostCounts  map[string]int `json:"hostCounts"`
+
+	//handle error json when duplicate
+	Detail     string   `json:"detail,omitempty"`
+	Error      string   `json:"error,omitempty"`
+	ErorrCode  string   `json:"errorCode,omitempty"`
+	Parameters []string `json:parameters,omitempty"`
+	Reason     string   `json:reason,omitempty"`
 }
 
 type Group struct {
@@ -97,15 +116,22 @@ func (oc *OMClient) LoadDoc(p string, ctx *DocContext) (string, error) {
 	return b.String(), nil
 }
 
-//GetGroupByName returns group if found.
+//GetGroupByName returns group if found only one.
 func (oc *OMClient) GetGroupByName(name string) (Group, error) {
+	var groupByName GroupByName
 	var group Group
 	b, err := oc.doRequest("GET", "/api/public/v1.0/groups/byName/"+name)
 	if err != nil {
-		return group, err
+		return groupByName, err
 	}
-	if err = json.Unmarshal(b, &group); err != nil {
-		return group, err
+	err = json.Unmarshal(b, &groupByName)
+	if err != nil {
+		if groupByName.ErorrCode == ERROR_CODE_MULTIPLE_GROUPS {
+			log.Println("%+v  -  %+v", groupByName.Reason, groupByName.Detail)
+			return group, nil
+		} else if err = json.Unmarshal(b, &group); err != nil {
+			return group, err
+		}
 	}
 	return group, nil
 }
