@@ -1,5 +1,5 @@
 ---
-name: cf-cli-linux64-6.40
+name: cf-cli-6-linux
 dependencies: []
 files:
 - cf/cf-cli-linux64-6.40
