@@ -4,6 +4,7 @@ set -e
 
 export GOROOT=$(readlink -nf /var/vcap/packages/golang-1.11-linux)
 export GOPATH=/var/vcap/packages/mongodb-smoke-tests
+# TODO - update to new repo
 export PACKAGE_NAME=github.com/cf-platform-eng/mongodb-on-demand-release
 export PATH=${GOROOT}/bin:${GOPATH}/bin:/var/vcap/packages/cf-cli-6-linux/bin:${PATH}
 
