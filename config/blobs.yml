@@ -1,3 +1,9 @@
+cf/cf-cli-linux64-6.40:
+  size: 6191398
+  sha: 1f7606b65b581ac87a6e723800ce57aa3c952015
+go/golang-linux64-1.11.1:
+  size: 127205934
+  sha: 6446c7d8ef096c5ca6088ec87b46bf4c120f62b0
 jq/jq-linux64-1.5:
   size: 3027945
   object_id: 682aa8a2-2a6e-49f5-499d-480edf5490b9
